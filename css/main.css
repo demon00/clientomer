@@ -656,12 +656,12 @@ ol li {
 }
 #header p strong {
   display: block;
-  padding-bottom: 3px;
+  padding-bottom: 4px;
 }
 #header p span {
   display: inline-block;
-  font-size: 15px;
-  margin-right: 37px;
+  font-size: 16px;
+  margin-right: 27px;
 }
 #header p span:last-child {
   margin-right: 0;
@@ -1094,10 +1094,6 @@ ol li {
   font-weight: 500;
   line-height: 15px;
   padding-top: 2px;
-  /*height: 26px;*/
-  /*width: 18px;*/
-  /*margin-left: 20px;*/
-  /*background: url(../images/menu-icon.gif) 0 9px no-repeat;*/
 }
 
 .menu-icon:hover {
@@ -3224,8 +3220,8 @@ h3 .reviews-link {
 /*Main Image*/
 
 .main__image {
-  background: url(../images/main-img.png) no-repeat 0 0;
-  width: 109%;
+  background: url(../images/main-img.jpg) no-repeat 0 0;
+  width: 100%;
   min-height: 383px;
   -webkit-background-size: cover;
   background-size: cover;
@@ -3320,6 +3316,18 @@ h3 .reviews-link {
 
 .last_item {
   margin-right: 0;
+}
+
+.active_item-menu::before {
+  border: 2px solid rgba(0, 112, 159, 1);
+}
+
+.active_item-menu::after {
+  opacity:0;
+}
+
+.active_item-menu {
+  color: #00709f;
 }
 
 .menu__two_hide {
@@ -3423,10 +3431,6 @@ h3 .reviews-link {
   cursor: pointer;
 }
 
-.programm__item_link:hover {
-  background-color: #f0f0ef;
-}
-
 .programm__img {
   width: 203px;
   height: 133px;
@@ -3459,6 +3463,7 @@ h3 .reviews-link {
   -webkit-transition: all .2s ease;
   -moz-transition: all .2s ease;
   transition: all .2s ease;
+  display: inline-block;
 }
 
 .program__item_link-caption::after {
@@ -3467,13 +3472,12 @@ h3 .reviews-link {
   width: 100%;
   height: 1px;
   background-color: #ff6600;
-  bottom: 0;
+  bottom: -3px;
   left: 0;
   opacity: 0.3;
-}
-
-.programm__item_link:hover .program__item_link-caption{
-  color: #000;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .programm__item_link:hover .program__item_link-caption::after{
@@ -3484,11 +3488,12 @@ h3 .reviews-link {
 
 .programm__selected {
   width: 100vw;
-  top: 185px;
+  top: 198px;
   background-color: #f5f6f8;
   position: absolute;
   z-index: 9;
   clear: both;
+  left: 0;
 }
 
 .programm__selected_container {
@@ -3509,9 +3514,21 @@ h3 .reviews-link {
   width: 288px;
   height: 199px;
   background: url("../images/selected.png") no-repeat center;
-  -webkit-background-size: cover;
+  -webkit-background-size: contain;
   background-size: contain;
   margin: 36px 0 0 0;
+}
+
+.programm__selected_img-moscow {
+  background: url("../images/programm_sel-two.png") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.programm__selected_img-chef {
+  background: url("../images/programm_sel-tree.png") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
 .programm__selected_caption {
@@ -3521,6 +3538,14 @@ h3 .reviews-link {
   font-family: "Calibri", sans-serif;
   font-weight: 500;
   color: #020202;
+  text-align: left;
+}
+
+.programm__selected_description {
+  padding-top: 20px;
+  padding-bottom: 0;
+  width: 90%;
+  color: #231f20;
 }
 
 .programm__selected_caption-kinds {
@@ -3531,6 +3556,7 @@ h3 .reviews-link {
   padding-bottom: 19px;
   width: 80%;
   padding-top: 27px;
+  text-align: left;
 }
 
 .programm__selected_item-caption {
@@ -3538,42 +3564,26 @@ h3 .reviews-link {
   font-size: 1.2em;
   color: #00709f;
   padding-top: 13px;
+  text-align: left;
 }
 
 .programm__selected_item-text {
   width: 90%;
   font-size: 1.067em;
   padding-top: 0px;
+  margin-left: 15px;
+  text-align: left;
 }
 
 .programm__selected_item-text-list {
   padding-bottom: 5px;
+  list-style: decimal;
+  color: #231f20;
 }
 
 .programm__selected_item-two {
   padding-bottom: 50px;
 }
-
-/*.buffets__caption {
-  color: #00709f;
-  font-size: 1.6em;
-  font-family: "PFHandbookPro-Regular", sans-serif;
-  padding-bottom: 19px;
-}
-
-.buffets__item_caption {
-  font-family: "PFHandbookPro-Regular", sans-serif;
-  font-size: 1.6em;
-  color: #00709f;
-}
-
-.buffets__item_text {
-  line-height: 19px;
-  font-size: 1.067em;
-  font-family: "PFHandbookPro-Regular", sans-serif;
-  color: #231f20;
-  font-weight: 400;
-  letter-spacing: 0.021em;*/
 
 /*End programm Selected*/
 /*End programm*/
@@ -3583,6 +3593,9 @@ h3 .reviews-link {
   display: block;
   float: left;
   width: 100%;
+}
+
+.buffets__container {
   margin-top: 30px;
 }
 
@@ -3602,10 +3615,17 @@ h3 .reviews-link {
 .buffets__item_text {
   line-height: 19px;
   font-size: 1.067em;
-  font-family: "PFHandbookPro-Regular", sans-serif;
+  font-family: "Calibri", sans-serif;
   color: #231f20;
-  font-weight: 400;
-  letter-spacing: 0.021em;
+  letter-spacing: -0.021em;
+}
+
+.buffets__chef_description {
+  line-height: 19px;
+  font-size: 1.067em;
+  font-family: "Calibri", sans-serif;
+  color: #231f20;
+  letter-spacing: -0.021em;
 }
 
 .buffets__item-two {
@@ -3713,6 +3733,7 @@ h3 .reviews-link {
   color: #fff;
   font-family: "PFHandbookPro-Regular", sans-serif;
   font-size: 1.2em;
+
 }
 
 .form-question__submit::after {
@@ -3725,6 +3746,14 @@ h3 .reviews-link {
   height: 0;
   right: -13px;
   top: 0;
+}
+
+.form-question__submit:hover {
+  background-color: #004f78;
+}
+
+.form-question__submit:hover::after {
+  border-left: 13px solid #004f78;
 }
 /*End Form*/
 
@@ -3762,6 +3791,9 @@ h3 .reviews-link {
   bottom: 0;
   left: 0;
   opacity: 0.3;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .contact__link:hover::after {
@@ -3829,7 +3861,8 @@ h3 .reviews-link {
 }
 
 .data-moscw {
-  padding-top: 10px;
+  padding-top: 8px;
+  margin-bottom: -2px;
 }
 
 .contact__curses_data-day {
@@ -3852,7 +3885,7 @@ h3 .reviews-link {
 
 .contact__curses_lost {
   display: block;
-  margin-top: -3px;
+  margin-top: -5px;
 }
 
 .small__link {
@@ -3860,7 +3893,7 @@ h3 .reviews-link {
 }
 
 .contact__curses_schedule {
-  top: 10px;
+  top: 12px;
   letter-spacing: -0.03em;
 }
 /*End Contact*/

@@ -265,7 +265,7 @@ $(window).load(function(){
 		//$("meta[name='viewport']").attr("content", 'width=device-width, initial-scale=1');
 		$(".scale-site").css({width:'100%', transform:'scale(1,1)'});
 		$('#wrapper').css({height:'auto'});
-		var width = $(window).width() + 17;
+		var width = $(window).width();
 
 		if (width <= 480) {
 			$('body').addClass('mobile');
@@ -352,33 +352,117 @@ $(window).load(function(){
 
   programm.addEventListener('click', (event) => {
     let forestProg = event.target.closest('.programm-forest');
+    let moscowProg = event.target.closest('.programm-moscow');
+    let chefProg = event.target.closest('.programm-chef');
 
-   if(!forestProg) {
-   	return
-	 }
+    let buffers = document.querySelector('.buffets');
+    let buffetsLesnom = buffers.querySelector('.buffets__lesnom_container');
+    let buffetsMoscow = buffers.querySelector('.buffets__moscow_container');
+    let buffetsChef = buffers.querySelector('.buffets__chef_container');
 
-  if(forestProg) {
-   	if(window.innerWidth >= 481) {
-     let buffets = document.querySelector('.buffets');
-     let itemCaption = forestProg.querySelector('.program__item_link-caption');
+    let programmItemLink = programm.querySelectorAll('.programm__item_link');
+    let itemCaption = programm.querySelectorAll('.program__item_link-caption');
 
-      buffets.classList.toggle('js-hidden');
-      forestProg.classList.toggle('js-programmItemActive');
-      itemCaption.classList.toggle('js-programmItemActiveCaption');
-    }
-    if(window.innerWidth <= 480) {
-   		let programmSelected = document.querySelector('.programm__selected');
-   		let closeIcon = programmSelected.querySelector('.programm__selected_close-icon');
-      closeIcon.onclick = () => {
-        programmSelected.classList.toggle('js-hidden');
-			};
-      programmSelected.classList.toggle('js-hidden');
+    if(forestProg) {
+
+    	if(window.innerWidth >= 481) {
+        largeRenderProgrammSelected();
+        buffetsLesnom.classList.toggle('js-hidden');
+        forestProg.firstElementChild.classList.add('js-programmItemActive');
+        forestProg.firstElementChild.lastElementChild.classList.add('js-programmItemActiveCaption');
+			}
+
+			if(window.innerWidth <= 480) {
+        smallRenderProgrammSelected(forestProg);
+			}
 		}
-  }
 
+		if(moscowProg) {
+
+      if(window.innerWidth >= 481) {
+        largeRenderProgrammSelected();
+        buffetsMoscow.classList.toggle('js-hidden');
+        moscowProg.firstElementChild.classList.add('js-programmItemActive');
+        moscowProg.firstElementChild.lastElementChild.classList.add('js-programmItemActiveCaption');
+      }
+
+      if(window.innerWidth <= 480) {
+        smallRenderProgrammSelected(moscowProg);
+      }
+		}
+
+		if(chefProg) {
+      if(window.innerWidth >= 481) {
+        largeRenderProgrammSelected();
+        buffetsChef.classList.toggle('js-hidden');
+        chefProg.firstElementChild.classList.add('js-programmItemActive');
+        chefProg.firstElementChild.lastElementChild.classList.add('js-programmItemActiveCaption');
+        chefProg.firstElementChild.lastElementChild.previousElementSibling.classList.add('js-programmItemActiveCaption');
+      }
+      if(window.innerWidth <= 480) {
+        smallRenderProgrammSelected(chefProg);
+      }
+		}
+
+    function smallRenderProgrammSelected(item) {
+
+			let itemCaption = item.querySelector('.program__item_link-caption');
+
+      let programmSelected = item.querySelector('.programm__selected');
+      let programmSelectedAll = programm.querySelectorAll('.programm__selected');
+
+      for (var i = 0; i < programmSelectedAll.length; i++) {
+        var programmSelectedHidden = programmSelectedAll[i].classList.contains('js-hidden');
+				if(!programmSelectedHidden) {
+					programmSelectedAll[i].classList.add('js-hidden');
+				}
+      }
+
+      programmSelected.classList.remove('js-hidden');
+
+      let close = event.target.closest('.programm__selected_close-icon');
+      if(close) {
+          programmSelected.classList.add('js-hidden');
+      }
+    }
+
+    function largeRenderProgrammSelected() {
+
+      for(let i = 0; i < buffers.children.length; i++) {
+        let buffersHide = buffers.children[i].classList.contains('js-hidden');
+        if(!buffersHide) {
+          buffers.children[i].classList.toggle('js-hidden');
+        }
+
+      }
+      for(let k = 0; k < programmItemLink.length; k++) {
+
+        let programmItemActive = programmItemLink[k].classList.contains('js-programmItemActive');
+        if(programmItemActive) {
+          programmItemLink[k].classList.toggle('js-programmItemActive');
+        }
+        programmItemLink[k].style.opacity = '0.5';
+        let programmImage = event.target.closest('.programm__img');
+        let programmLink = event.target.closest('.program__item_link-caption');
+
+        event.target.style.opacity = '1';
+        if(programmImage) {
+          programmImage.parentNode.style.opacity = '1';
+				 }
+				if(programmLink) {
+          programmLink.parentNode.style.opacity = '1';
+				}
+      }
+
+      for(let j = 0; j < itemCaption.length; j++) {
+        let itemCaptionActive = itemCaption[j].classList.contains('js-programmItemActiveCaption');
+        if(itemCaptionActive) {
+          itemCaption[j].classList.toggle('js-programmItemActiveCaption');
+        }
+      }
+    }
 
 	});
-
 
 });
 
