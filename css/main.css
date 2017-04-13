@@ -3378,7 +3378,7 @@ h3 .reviews-link {
 
 .celebration__text {
   font-family: "Calibri", sans-serif;
-  font-size: 1.0666em;
+  font-size: 16px;
   color: #231f20;
   letter-spacing: -0.03em;
 }
@@ -3455,7 +3455,7 @@ h3 .reviews-link {
 
 .program__item_link-caption {
   margin: auto;
-  font-size: 1.067em;
+  font-size: 16px;
   line-height: 0.95em;
   position: relative;
   color: #ff6600;
@@ -3488,9 +3488,9 @@ h3 .reviews-link {
 
 .programm__selected {
   width: 100vw;
-  top: 198px;
+  top: 0;
   background-color: #f5f6f8;
-  position: absolute;
+  position: relative;
   z-index: 9;
   clear: both;
   left: 0;
@@ -3498,7 +3498,8 @@ h3 .reviews-link {
 
 .programm__selected_container {
   position: relative;
-  margin-left: 20px;
+	padding-left: 22px;
+	padding-top: 17px;
 }
 
 .programm__selected_close-icon {
@@ -3507,6 +3508,7 @@ h3 .reviews-link {
   height: 17px;
   background: url("../images/modal-close.png") no-repeat center;
   right: 35px;
+	top: 20px;
   cursor: pointer;
 }
 
@@ -3516,7 +3518,10 @@ h3 .reviews-link {
   background: url("../images/selected.png") no-repeat center;
   -webkit-background-size: contain;
   background-size: contain;
-  margin: 36px 0 0 0;
+	padding-top: 36px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .programm__selected_img-moscow {
@@ -3534,7 +3539,7 @@ h3 .reviews-link {
 .programm__selected_caption {
   display: block;
   padding: 13px 0 0 0;
-  font-size: 1.067em;
+  font-size: 16px;
   font-family: "Calibri", sans-serif;
   font-weight: 500;
   color: #020202;
@@ -3569,7 +3574,7 @@ h3 .reviews-link {
 
 .programm__selected_item-text {
   width: 90%;
-  font-size: 1.067em;
+  font-size: 16px;
   padding-top: 0px;
   margin-left: 15px;
   text-align: left;
@@ -3614,7 +3619,7 @@ h3 .reviews-link {
 
 .buffets__item_text {
   line-height: 19px;
-  font-size: 1.067em;
+  font-size: 16px;
   font-family: "Calibri", sans-serif;
   color: #231f20;
   letter-spacing: -0.021em;
@@ -3622,7 +3627,7 @@ h3 .reviews-link {
 
 .buffets__chef_description {
   line-height: 19px;
-  font-size: 1.067em;
+  font-size: 16px;
   font-family: "Calibri", sans-serif;
   color: #231f20;
   letter-spacing: -0.021em;
@@ -3669,7 +3674,7 @@ h3 .reviews-link {
   float: left;
   clear: both;
   padding-left: 27px;
-  font-size: 1.067em;
+  font-size: 16px;
   font-family: "Calibri", sans-serif;
   color: #231f20;
   letter-spacing: -0.03em;
@@ -3773,7 +3778,7 @@ h3 .reviews-link {
 }
 
 .contact__link {
-  font-size: 1.067em;
+  font-size: 16px;
   line-height: 0.95em;
   position: relative;
   color: #ff6600;

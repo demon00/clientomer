@@ -406,6 +406,10 @@ $(window).load(function(){
 
     function smallRenderProgrammSelected(item) {
 
+    	let programmItemLink = item.firstElementChild;
+
+    	programmItemLink.classList.add('js-hidden');
+
 			let itemCaption = item.querySelector('.program__item_link-caption');
 
       let programmSelected = item.querySelector('.programm__selected');
@@ -421,8 +425,10 @@ $(window).load(function(){
       programmSelected.classList.remove('js-hidden');
 
       let close = event.target.closest('.programm__selected_close-icon');
+
       if(close) {
           programmSelected.classList.add('js-hidden');
+          programmItemLink.classList.remove('js-hidden');
       }
     }
 
