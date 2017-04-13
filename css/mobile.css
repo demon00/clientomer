@@ -1747,7 +1747,8 @@ th {
   }
 
   .programm__selected_container {
-    margin-left: 30px;
+    margin-left: 32px;
+		padding-left: 0;
   }
 
   .programm__selected_close-icon {
