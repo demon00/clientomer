@@ -1274,11 +1274,14 @@ th {
   .program__item_link-caption {
     top: 13px;
     display: inline-block;
+  }
+
+  .programm__item_link {
     text-align: left;
   }
 
   .item_link-caption-two {
-    top: 10px;
+    top: 11px;
   }
 
   .program__item_link-caption::after {
@@ -1636,6 +1639,10 @@ th {
 
   .large__link {
     display: inline-block;
+  }
+
+  .programm__selected_caption-kinds {
+    line-height: 30px !important;
   }
 
   .programm__selected_img {

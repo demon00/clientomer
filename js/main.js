@@ -406,31 +406,28 @@ $(window).load(function(){
 
     function smallRenderProgrammSelected(item) {
 
-    	let programmItemLink = item.firstElementChild;
-
-    	programmItemLink.classList.add('js-hidden');
-
 			let itemCaption = item.querySelector('.program__item_link-caption');
 
       let programmSelected = item.querySelector('.programm__selected');
+
       let programmSelectedAll = programm.querySelectorAll('.programm__selected');
 
-      for (var i = 0; i < programmSelectedAll.length; i++) {
-        var programmSelectedHidden = programmSelectedAll[i].classList.contains('js-hidden');
-				if(!programmSelectedHidden) {
-					programmSelectedAll[i].classList.add('js-hidden');
-				}
-      }
-
-      programmSelected.classList.remove('js-hidden');
+      // for (let i = 0; i < programmSelectedAll.length; i++) {
+      //   let programmSelectedHidden = programmSelectedAll[i].classList.contains('js-hidden');
+				// if(!programmSelectedHidden) {
+				// 	programmSelectedAll[i].classList.add('js-hidden');
+				// }
+      // }
+			programmSelected.classList.remove('js-hidden');
+			let programmItemLinkTarget = item.firstElementChild;
+      programmItemLinkTarget.classList.add('js-hidden');
 
       let close = event.target.closest('.programm__selected_close-icon');
-
       if(close) {
           programmSelected.classList.add('js-hidden');
-          programmItemLink.classList.remove('js-hidden');
+          programmItemLinkTarget.classList.remove('js-hidden');
       }
-    }
+    };
 
     function largeRenderProgrammSelected() {
 
